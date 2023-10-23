@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/fundo-de-tecnologia-do-circuito-da-placa-mae-em-gradiente-azul.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-color 2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    padding: 20px;
+    justify-content: center; 
+}
+section {
+    margin: 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 80vh;
+    height: 80vh;
+    transition: all 0.5s ease; 
+    align-items: center; 
+    justify-content: center; 
+    transition: transform 0.5s ease-out;
+    flex-grow: 1;
+    max-height: 80vh; 
+    overflow: hidden;
+
+}
+        section:hover {
+            transform: scale(1.02);
+        }
+        .mostra {
+   background-color: transparent; 
+   margin-top:20px; 
+   padding:20px; 
+   border-radius:20px; 
+   display:block; 
+   max-height: calc(60vh - 70px);
+   margin-top: 20px; 
+   overflow-y: auto;
+   transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
+section:hover .mostra {
+    opacity: 1;
+}
+section h2, section i {
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
+section:hover h2, section:hover i {
+    opacity: 1;
+}
+        section.open .mostra {
+            display: block;
+        }
+        footer {
+            background-color: #00008B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 50px; 
+        }
+        header {
+            background-image: url('img/fundo-de-tecnologia-do-circuito-da-placa-mae-em-gradiente-azul.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+        }
+        .profile-picture {
+            background-image: url('img/eu.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+        section h2 {
+   color:#4169E1; 
+   margin-left:10px; 
+   
+}
+.status-bar, .icon-box {
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
+section:hover .status-bar, section:hover .icon-box {
+    opacity: 1;
+}
+        .button:hover {
+            color: #000;
+        }
+        footer {
+    bottom: 0;
+    width: 100%; 
+    padding-bottom: 50px; 
+}
+.nav-bar {
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px; 
+    background-color: #00008B;
+    color: white;
+    display: none;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+section:hover .nav-bar {
+    display: flex; 
+}
+.button {
+            position: absolute;
+            top: 35px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            transition: transform 0.3s ease-out;
+        }
+        section.open .button {
+    display: block; 
+}
+section.open {
+    flex-grow: 2;
+}
+.button.collapse {
+    display: none; 
+}
+
+section.open .button.collapse {
+    display: block; 
+}
+
+section.open .button.expand {
+    display: none;
+}
+
+section i {
+    margin-top: 20px;
+}
+.section-content {
+    max-height: 60vh;
+}
+.icon-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00008B;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #00008B;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.section-image {
+    width: 100%;  
+    height: 100%; 
+}
+.lock-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: opacity 2s ease-in; /*aumente o tempo de transição aqui*/
+}
+
+section:nth-of-type(1) .status-bar,
+section:nth-of-type(1) .icon-box {
+    background-color: #4169E1; 
+}
+section:nth-of-type(1) {
+    background-image: url('img/1152262.jpg');
+    background-size: cover;
+}
+
+section:nth-of-type(2) .status-bar,
+section:nth-of-type(2) .icon-box {
+    background-color: #6495ED;
+}
+section:nth-of-type(2) {
+    background-image: url('img/1152266.jpg');
+    background-size: cover;
+}
+
+section:nth-of-type(3) .status-bar,
+section:nth-of-type(3) .icon-box {
+    background-color: #00008b; 
+}
+section:nth-of-type(3) {
+    background-image: url('img/1316862.png');
+    background-size: cover;
+}
+
+section:nth-of-type(4) .status-bar,
+section:nth-of-type(4) .icon-box {
+    background-color: #1e90ff; 
+    
+}
+section:nth-of-type(4) {
+    background-image: url('img/1152260.jpg');
+    background-size: cover;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+p{
+    font-weight: bold;
+    color: black;
+
+}
+h3{
+    font-weight: bold;  
+    color: black;
+}
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+    }
+    section {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+    }
+    section {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 1025px) {
+    .content {
+        flex-direction: column;
+    }
+    section {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 1025px) {
+    .content {
+        flex-direction: row;
+    }
+    section {
+        width: calc(100% / 4); /* Divide a largura total por 4, já que temos 4 seções */
+        height: 70vh;
+        margin-bottom: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <div class="profile-picture"></div>
+            <h1><strong>Nícolas Bopsin Melos</strong></h1>
+        </div>
+    </header>
+    <div class="content">
+        <section>
+            <i class="fas fa-user"></i>
+            <h2>Sobre Mim</h2>
+            <div class="mostra">
+                <div class="section-content">
+                    <p>Nascido no Rio Grande do Sul, Brasil, sou um jovem desenvolvedor backend apaixonado por tecnologia e inovação. Atualmente, estou cursando a faculdade de Ciência da Computação, onde tenho a oportunidade de aprofundar meu conhecimento e aprimorar minhas habilidades em programação e desenvolvimento de software.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-window-restore"></i>
+            </div>
+            <div class="status-bar">
+                <span class="time"></span>
+                <span class="notifications">🔔</span>
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+            </div>
+            <div class="lock-screen">
+                <video autoplay muted loop id="myVideo">
+                    <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
+            </div>
+            <div class="button expand" onclick="expandContent(this)">+</div> 
+    <div class="button collapse" onclick="collapseContent(this)">-</div>
+</section>
+        <section>
+           
+            <i class="fas fa-laptop-code"></i>
+            <h2>Projetos</h2>
+            <div class="mostra">
+                <div class="section-content">
+                    <h3>Em desenvolvimento</h3>
+                    <img src="img/pngtree-construction-site-safety-warning-signs-png-image_2809453.jpg"class="section-image" style="display: block; margin: auto;" alt="Projeto">
+                    <p>Colocar descrição do projeto aqui.</p>
+                    <h3>Em desenvolvimento</h3>
+                    <img src="img/pngtree-construction-site-safety-warning-signs-png-image_2809453.jpg"class="section-image" style="display: block; margin: auto;" alt="Projeto">
+                    <p>Colocar descrição do projeto aqui.</p>
+                    <h3>Em desenvolvimento</h3>
+                    <img src="img/pngtree-construction-site-safety-warning-signs-png-image_2809453.jpg"class="section-image" style="display: block; margin: auto;" alt="Projeto">
+                    <p>Colocar descrição do projeto aqui.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-window-restore"></i>
+            </div>
+            <div class="status-bar">
+                <span class="time"></span>
+                <span class="notifications">🔔</span>
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+            </div>
+            <div class="lock-screen">
+                <video autoplay muted loop id="myVideo">
+                    <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
+            </div>
+            <div class="button expand" onclick="expandContent(this)">+</div> 
+    <div class="button collapse" onclick="collapseContent(this)">-</div>
+</section>
+        <section>
+    
+            <i class="fas fa-address-card"></i>
+            <h2>Contato</h2>
+            <div class="mostra">
+                <div class="section-content">
+                    <p >Entre em contato comigo:</p>
+                    <p><a href="https://www.instagram.com/nicolasz999_/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="https://www.linkedin.com/in/nicolas-bopsin-085432266/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                    <p><a href="https://wa.me/5551999130630/" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-window-restore"></i>
+            </div>
+            <div class="status-bar">
+                <span class="time"></span>
+                <span class="notifications">🔔</span>
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+            </div>
+            <div class="lock-screen">
+                <video autoplay muted loop id="myVideo">
+                    <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
+            </div>
+            <div class="button expand" onclick="expandContent(this)">+</div> 
+    <div class="button collapse" onclick="collapseContent(this)">-</div> 
+</section>
+        <section> 
+            <i class="fas fa-certificate"></i>
+            <h2>Certificados</h2>
+            <div class="mostra">
+                <div class="section-content">
+                    <h3>Certificado de Harvard</h3>
+                    <img src="img/harvard.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>Introdução a Ciência da Computação - 70horas.</p>
+                    
+                    <h3>Certificado Bradesco - Aplicativos</h3>
+                    <img src="img/APLICATIVOS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>Aplicações Mobile com Android Studio - 15horas.</p>
+
+                    <h3>Certificado Bradesco - Excel </h3>
+                    <img src="img/excel intermediario.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>Excel intermediario - 20horas.</p>
+
+                    <h3>Certificado Bradesco - CSS </h3>
+                    <img src="img/CSS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>Inovando com CSS - 26 horas.</p>
+
+                    <h3>Certificado Bradesco - Javascript </h3>
+                    <img src="img/introducao js.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>Introdução Javascript - 20horas.</p>
+
+                    <h3>Certificado Bradesco - HTML - 6horas</h3>
+                    <img src="img/html avançado.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>HTML avançado - 6horas.</p>
+
+                    <h3>Certificado Bradesco - HTML e CSS </h3>
+                    <img src="img/html - css.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                    <p>HTML e CSS - 24horas.</p>
+                </div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-window-restore"></i>
+            </div>
+            <div class="status-bar">
+                <span class="time"></span>
+                <span class="notifications">🔔</span>
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+            </div>
+            <div class="lock-screen">
+                <video autoplay muted loop id="myVideo">
+                    <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
+            </div>
+            <div class="button expand" onclick="expandContent(this)">+</div> 
+    <div class="button collapse" onclick="collapseContent(this)">-</div>
+</section>
+    </div>
+    <div class="content">
+        <section onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO PDF.pdf'">
+            <video autoplay muted loop id="myVideo" onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO PDF.pdf'">
+                <source src="img/stock-footage-set-of-animated-arrow-cursor-mouse-movement-and-clicks-with-alpha-channel-mouse-cursor-icon (online-video-cutter.com).mp4" type="video/mp4">
+            </video>
+        </section>
+    </div>
+    <script>
+    function expandContent(button) {
+        var section = button.parentNode;
+    section.style.transform = 'scale(1.1)';
+
+         var section = button.parentNode;
+    section.classList.add("open");
+
+        var allSections = document.querySelectorAll('section');
+    allSections.forEach(function(sec) {
+        if (sec !== section) {
+            sec.style.display = 'none'; 
+        } else {
+            sec.style.display = 'flex'; 
+        }
+    });
+}
+
+function collapseContent(button) {
+    var section = button.parentNode;
+    section.style.transform = 'scale(1)';
+    
+    var section = button.parentNode;
+    section.classList.remove("open");
+
+   
+    var allSections = document.querySelectorAll('section');
+    allSections.forEach(function(sec) {
+        sec.style.display = 'flex'; 
+    });
+   
+}
+window.onload = function() {
+    updateTime();
+    setInterval(updateTime, 1000);
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        section.addEventListener('mouseover', function() {
+            var lockScreen = section.querySelector('.lock-screen');
+            lockScreen.style.opacity = '0';
+            lockScreen.style.pointerEvents = 'none';
+            lockScreen.querySelector('video').style.display = 'none';
+        });
+        section.addEventListener('mouseout', function() {
+            var lockScreen = section.querySelector('.lock-screen');
+            lockScreen.style.opacity = '1';
+            lockScreen.style.pointerEvents = 'auto';
+            lockScreen.querySelector('video').style.display = 'block';
+        });
+    });
+
+    var buttons = document.querySelectorAll('.button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            button.style.transform = 'scale(1.2)';
+            setTimeout(function() {
+                button.style.transform = '';
+            }, 300);
+        });
+    });
+};
+
+function updateTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    var timeString = hours + ':' + minutes;
+    
+    var timeElements = document.querySelectorAll('.time');
+    timeElements.forEach(function(element) {
+        element.textContent = timeString;
+    });
+}
+    </script>
+</body>
+</html>
