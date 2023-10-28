@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="img/eu.jpg" type="image/x-icon">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -23,6 +24,10 @@
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+}
+h1 {
+    color: #000; 
+    text-shadow: 2px 2px 4px #000000; 
 }
 .content {
     flex: 1 0 auto;
@@ -78,6 +83,18 @@ section:hover .mostra {
 section h2, section i {
     transition: opacity 2s ease-in-out;
     opacity: 0;
+    
+}
+h2 {
+    color: #000; /* Muda a cor do texto para preto */
+    font-size: 2em; /* Aumenta o tamanho da fonte */
+    text-shadow: 2px 2px 4px #000000; /* Adiciona uma sombra ao texto para destacá-lo */
+}
+i.fas {
+    font-size: 2em; /* Aumenta o tamanho da fonte */
+}
+section {
+    padding-top: 50px; 
 }
 section:hover h2, section:hover i {
     opacity: 1;
@@ -95,7 +112,7 @@ section:hover h2, section:hover i {
         header {
             color: white;
             text-align: center;
-            font-size: 30px;
+            font-size: 40px;
             font-weight: 900;
             display: flex;
             flex-direction: column;
@@ -104,16 +121,17 @@ section:hover h2, section:hover i {
             padding: 20px;
         }
         .profile-container {
-            display: flex;
-            align-items: center;
-        }
+    display: flex;
+    align-items: center;
+}
         .profile-picture {
             background-image: url('img/eu.jpg');
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             background-size: cover;
             background-position: center;
             border-radius: 50%;
+            margin-right: 20px;
         }
         header a {
             color: white;
@@ -123,6 +141,10 @@ section:hover h2, section:hover i {
    color:#4169E1; 
    margin-left:10px; 
    
+}
+#certificado p{
+color: black;
+font-weight:700;
 }
 .status-bar, .icon-box {
     transition: opacity 2s ease-in-out;
@@ -198,21 +220,22 @@ section i {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 50px; /* Aumenta a altura da barra */
     background-color: #00008B;
     color: white;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-   
+    align-items:center; /* Centraliza os ícones verticalmente */
+    padding: 10px; 
 }
+
 
 .status-bar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
+    height: 50px;
     background-color: #00008B;
     color: white;
     display: flex;
@@ -220,6 +243,7 @@ section i {
     align-items: center;
     padding: 0 10px;
 }
+
 .section-image {
     width: 100%;  
     height: 100%; 
@@ -241,7 +265,7 @@ section:nth-of-type(1) .icon-box {
     background-color: #4169E1; 
 }
 section:nth-of-type(1) {
-    background-image: url('img/1152262.jpg');
+    background-image: url('img/1152260.jpg');
     background-size: cover;
 }
 
@@ -269,7 +293,7 @@ section:nth-of-type(4) .icon-box {
     
 }
 section:nth-of-type(4) {
-    background-image: url('img/1152260.jpg');
+    background-image: url('img/1152262.jpg');
     background-size: cover;
 }
 video {
@@ -283,12 +307,63 @@ video {
 p{
     font-weight: bold;
     color: black;
+    font-size: 20px;
 
 }
 h3{
     font-weight: bold;  
     color: black;
+    font-size: 30px;
 }
+
+.icon-box i {
+    font-size: 1.4em;
+}
+.status-bar i {
+    font-size: 10em !important;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form label {
+    margin-bottom: 0.5em;
+    color: black;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    width: auto;
+    background-color: #4169E1;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #00008B;
+}
+.seta {
+    display: none; /* Esconde a seta por padrão */
+    text-align: center;
+    font-size: 4em; /* Ajuste para o tamanho desejado */
+    margin-top: 30%;
+    animation: bounce 2s infinite;
+    color: white;
+}
+
 @media (max-width: 600px) {
     .content {
         flex-direction: column;
@@ -298,7 +373,33 @@ h3{
         height: auto;
         margin-bottom: 20px;
     }
+    .profile-container {
+        position: relative;
+        padding-top: 150px; 
+        display: flex;
+    align-items: center;
+    justify-content: flex-end;/* Adiciona mais espaço no topo em dispositivos móveis */
+    }
+
+    .profile-picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px; /* Aumenta o tamanho da foto de perfil para dispositivos móveis */
+        height: 150px; /* Aumenta o tamanho da foto de perfil para dispositivos móveis */
+        margin-right: 20px;
+    }
+
+    h1 {
+        margin-top: 20px; /* Adiciona uma margem na parte superior em dispositivos móveis */
+    }
 }
+@media (min-width: 601px) {
+    .seta {
+        display: block; /* Mostra a seta em dispositivos que não são celulares */
+    }
+}
+
 @media (min-width: 601px) and (max-width: 1024px) {
     .content {
         flex-direction: column;
@@ -318,25 +419,42 @@ h3{
         height: auto;
         margin-bottom: 20px;
     }
+    
 }
 @media (min-width: 1025px) {
     .content {
         flex-direction: row;
     }
     section {
-        width: calc(100% / 4); /* Divide a largura total por 4, já que temos 4 seções */
+        width: calc(100% / 4); 
         height: 70vh;
         margin-bottom: 20px;
     }
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+h1 {
+    color: #000; 
+    text-shadow: 2px 2px 4px #000000; 
+    margin-top: 0;
+}
     </style>
 </head>
 <body>
     <header>
         <div class="profile-container">
             <div class="profile-picture"></div>
-            <h1><strong>Nícolas Bopsin Melos</strong></h1>
+            <h1 ><strong>Nícolas Bopsin Melos</strong></h1>
         </div>
         <h4 style="color: black;"><strong>!ATENÇÃO! site em desenvolvimento</strong></h4>
     </header>
@@ -346,7 +464,7 @@ h3{
             <h2>Sobre Mim</h2>
             <div class="mostra">
                 <div class="section-content">
-                    <p>Nascido no Rio Grande do Sul, Brasil, sou um jovem desenvolvedor backend apaixonado por tecnologia e inovação. Atualmente, estou cursando a faculdade de Ciência da Computação, onde tenho a oportunidade de aprofundar meu conhecimento e aprimorar minhas habilidades em programação e desenvolvimento de software.</p>
+                    <p style="color: white;">Nascido no Rio Grande do Sul, Brasil, sou um jovem desenvolvedor Full-stack apaixonado por tecnologia e inovação. Atualmente, estou cursando a faculdade de Ciência da Computação, onde tenho a oportunidade de aprofundar meu conhecimento e aprimorar minhas habilidades em programação e desenvolvimento de software.</p>
                 </div>
             </div>
             <div class="icon-box">
@@ -368,7 +486,7 @@ h3{
     <div class="button collapse" onclick="collapseContent(this)">-</div>
 </section>
         <section>
-           
+
             <i class="fas fa-laptop-code"></i>
             <h2>Projetos</h2>
             <div class="mostra">
@@ -402,10 +520,61 @@ h3{
             <div class="button expand" onclick="expandContent(this)">+</div> 
     <div class="button collapse" onclick="collapseContent(this)">-</div>
 </section>
-        <section>
+            <section> 
+                <i class="fas fa-certificate"></i>
+                <h2>Certificados</h2>
+                <div class="mostra">
+                    <div class="section-content "  id="certificado">
+                        <h3>Certificado de Harvard</h3>
+                        <img src="img/harvard.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Introdução a Ciência da Computação - 70horas.</p>
+                        
+                        <h3>Certificado Bradesco - Aplicativos</h3>
+                        <img src="img/APLICATIVOS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Aplicações Mobile com Android Studio - 15horas.</p>
     
+                        <h3>Certificado Bradesco - Excel </h3>
+                        <img src="img/excel intermediario.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Excel intermediario - 20horas.</p>
+    
+                        <h3>Certificado Bradesco - CSS </h3>
+                        <img src="img/CSS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Inovando com CSS - 26 horas.</p>
+    
+                        <h3>Certificado Bradesco - Javascript </h3>
+                        <img src="img/introducao js.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Introdução Javascript - 20horas.</p>
+    
+                        <h3>Certificado Bradesco - HTML - 6horas</h3>
+                        <img src="img/html avançado.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>HTML avançado - 6horas.</p>
+    
+                        <h3>Certificado Bradesco - HTML e CSS </h3>
+                        <img src="img/html - css.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>HTML e CSS - 24horas.</p>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-home"></i>
+                    <i class="fas fa-window-restore"></i>
+                </div>
+                <div class="status-bar">
+                    <span class="time"></span>
+                    <span class="notifications">🔔</span>
+                    <span class="signal">📶</span>
+                    <span class="battery">🔋</span>
+                </div>
+                <div class="lock-screen">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
+                </div>
+                <div class="button expand" onclick="expandContent(this)">+</div> 
+        <div class="button collapse" onclick="collapseContent(this)">-</div>
+    </section>
+        <section> 
             <i class="fas fa-address-card"></i>
-            <h2>Contato</h2>
+            <h2>Redes-socias</h2>
             <div class="mostra">
                 <div class="section-content">
                     <p >Entre em contato comigo:</p>
@@ -432,38 +601,26 @@ h3{
             <div class="button expand" onclick="expandContent(this)">+</div> 
     <div class="button collapse" onclick="collapseContent(this)">-</div> 
 </section>
-        <section> 
-            <i class="fas fa-certificate"></i>
-            <h2>Certificados</h2>
+<div class="seta">
+    <i class="fas fa-arrow-down"></i> 
+</div>
+</section>
+    </div>
+    <div class="content">
+        <section>
+            <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+            <h2>Contato (em teste)</h2>
             <div class="mostra">
                 <div class="section-content">
-                    <h3>Certificado de Harvard</h3>
-                    <img src="img/harvard.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>Introdução a Ciência da Computação - 70horas.</p>
-                    
-                    <h3>Certificado Bradesco - Aplicativos</h3>
-                    <img src="img/APLICATIVOS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>Aplicações Mobile com Android Studio - 15horas.</p>
-
-                    <h3>Certificado Bradesco - Excel </h3>
-                    <img src="img/excel intermediario.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>Excel intermediario - 20horas.</p>
-
-                    <h3>Certificado Bradesco - CSS </h3>
-                    <img src="img/CSS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>Inovando com CSS - 26 horas.</p>
-
-                    <h3>Certificado Bradesco - Javascript </h3>
-                    <img src="img/introducao js.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>Introdução Javascript - 20horas.</p>
-
-                    <h3>Certificado Bradesco - HTML - 6horas</h3>
-                    <img src="img/html avançado.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>HTML avançado - 6horas.</p>
-
-                    <h3>Certificado Bradesco - HTML e CSS </h3>
-                    <img src="img/html - css.jfif" class="section-image" style="display: block; margin: auto;" alt="Certificado">
-                    <p>HTML e CSS - 24horas.</p>
+                    <form action="process_form.php" method="post">
+                        <label for="name">Nome:</label><br>
+                        <input type="text" id="name" name="name"><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"><br>
+                        <label for="message">Mensagem:</label><br>
+                        <textarea id="message" name="message"></textarea><br>
+                        <input type="submit" value="Enviar">
+                    </form>
                 </div>
             </div>
             <div class="icon-box">
@@ -482,12 +639,11 @@ h3{
                     <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
             </div>
             <div class="button expand" onclick="expandContent(this)">+</div> 
-    <div class="button collapse" onclick="collapseContent(this)">-</div>
+    <div class="button collapse" onclick="collapseContent(this)">-</div> 
 </section>
-    </div>
-    <div class="content">
         <section onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'">
-            <video autoplay muted loop id="myVideo" onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'">
+            <img src="img/cv.png" style="position: absolute; top: 10px; right: 10px; width: 3em; height: 3em; z-index: 1; filter: invert(1);" alt="Ícone de Currículo">
+            <video autoplay muted loop id="myVideo" onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'" style="z-index: 0;">
                 <source src="img/stock-footage-set-of-animated-arrow-cursor-mouse-movement-and-clicks-with-alpha-channel-mouse-cursor-icon (online-video-cutter.com).mp4" type="video/mp4">
             </video>
         </section>
@@ -516,7 +672,6 @@ function collapseContent(button) {
     
     var section = button.parentNode;
     section.classList.remove("open");
-
    
     var allSections = document.querySelectorAll('section');
     allSections.forEach(function(sec) {
@@ -568,6 +723,8 @@ function updateTime() {
         element.textContent = timeString;
     });
 }
+
+
     </script>
 </body>
 </html>
