@@ -1,0 +1,449 @@
+* {
+    box-sizing: border-box;
+}
+body {
+font-family: 'Roboto', sans-serif;
+margin: 0;
+padding: 0;
+background-image: url('img/fundo-de-tecnologia-do-circuito-da-placa-mae-em-gradiente-azul.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+transition: background-color 2s;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+overflow-x: hidden;
+}
+h1 {
+color: #000; 
+text-shadow: 2px 2px 4px #000000; 
+}
+.content {
+flex: 1 0 auto;
+display: flex;
+flex-direction: row; 
+align-items: center;
+padding: 20px;
+justify-content: center; 
+}
+section {
+margin: 20px;
+text-align: center;
+background-color: #ecf0f1;
+border: 2px solid black;
+border-radius: 20px;
+padding: 20px;
+cursor: pointer;
+transition: transform 0.3s;
+max-width: 600px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+position: relative;
+width: 80vh;
+height: 80vh;
+transition: all 0.5s ease; 
+align-items: center; 
+justify-content: center; 
+transition: transform 0.5s ease-out;
+flex-grow: 1;
+max-height: 80vh; 
+overflow: hidden;
+
+}
+section:hover {
+    transform: scale(1.02);
+}
+.mostra {
+background-color: transparent; 
+margin-top:20px; 
+padding:20px; 
+border-radius:20px; 
+display:block; 
+max-height: calc(60vh - 70px);
+margin-top: 20px; 
+overflow-y: auto;
+transition: opacity 2s ease-in-out;
+opacity: 0;
+}
+section:hover .mostra {
+opacity: 1;
+}
+section h2, section i {
+transition: opacity 2s ease-in-out;
+opacity: 0;
+
+}
+h2 {
+color: #000; /* Muda a cor do texto para preto */
+font-size: 2em; /* Aumenta o tamanho da fonte */
+text-shadow: 2px 2px 4px #000000; /* Adiciona uma sombra ao texto para destacá-lo */
+}
+i.fas {
+font-size: 2em; /* Aumenta o tamanho da fonte */
+}
+section {
+padding-top: 50px; 
+}
+section:hover h2, section:hover i {
+opacity: 1;
+}
+section.open .mostra {
+    display: block;
+}
+footer {
+    background-color: #00008B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 50px; 
+}
+header {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.profile-container {
+display: flex;
+align-items: center;
+}
+.profile-picture {
+    background-image: url('img/eu.jpg');
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+header a {
+    color: white;
+    text-decoration: none;
+}
+section h2 {
+color:#4169E1; 
+margin-left:10px; 
+
+}
+#certificado p{
+color: black;
+font-weight:700;
+}
+.status-bar, .icon-box {
+transition: opacity 2s ease-in-out;
+opacity: 0;
+}
+section:hover .status-bar, section:hover .icon-box {
+opacity: 1;
+}
+
+.button:hover {
+background-color: #00008B; /* Altera a cor de fundo do botão quando o mouse passa sobre ele */
+transform: scale(1.2); /* Aumenta o tamanho do botão quando o mouse passa sobre ele */
+}
+footer {
+bottom: 0;
+width: 100%; 
+padding-bottom: 50px; 
+}
+.nav-bar {
+justify-content: space-around;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 50px; 
+background-color: #00008B;
+color: white;
+display: none;
+justify-content: space-evenly; 
+align-items: center;
+}
+
+section:hover .nav-bar {
+display: flex; 
+}
+.button {
+position: absolute;
+top: 35px;
+right: 10px;
+background-color: black; /* Altera a cor de fundo do botão */
+color: white; /* Altera a cor do texto do botão */
+border: none;
+border-radius: 50%; /* Faz o botão circular */
+padding: 10px 15px; /* Aumenta o preenchimento para tornar o botão maior */
+cursor: pointer;
+transition: background-color 0.3s, transform 0.3s; /* Adiciona uma transição ao transformar */
+font-size: 1.5em; /* Aumenta o tamanho do texto do botão */
+}
+section.open .button {
+display: block; 
+}
+section.open {
+flex-grow: 2;
+}
+.button.collapse {
+display: none; 
+}
+
+section.open .button.collapse {
+display: block; 
+}
+
+section.open .button.expand {
+display: none;
+}
+
+section i {
+margin-top: 20px;
+}
+.curriculo-icon {
+position: absolute;
+top: 10px;
+right: 10px;
+width: 5em; /* Aumenta o tamanho do ícone */
+height: 5em; /* Aumenta o tamanho do ícone */
+z-index: 1;
+filter: invert(1);
+}
+.section-content {
+max-height: 60vh;
+}
+.icon-box {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 50px; /* Aumenta a altura da barra */
+background-color: #00008B;
+color: white;
+display: flex;
+justify-content: space-around;
+align-items:center; /* Centraliza os ícones verticalmente */
+padding: 10px; 
+}
+
+
+.status-bar {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+background-color: #00008B;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 10px;
+}
+
+.section-image {
+width: 100%;  
+height: 100%; 
+}
+.lock-screen {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+cursor: pointer;
+transition: opacity 2s ease-in; /*aumente o tempo de transição aqui*/
+}
+
+section:nth-of-type(1) .status-bar,
+section:nth-of-type(1) .icon-box {
+background-color: #4169E1; 
+}
+section:nth-of-type(1) {
+background-image: url('img/1152260.jpg');
+background-size: cover;
+}
+
+section:nth-of-type(2) .status-bar,
+section:nth-of-type(2) .icon-box {
+background-color: #6495ED;
+}
+section:nth-of-type(2) {
+background-image: url('img/1152266.jpg');
+background-size: cover;
+}
+
+section:nth-of-type(3) .status-bar,
+section:nth-of-type(3) .icon-box {
+background-color: #00008b; 
+}
+section:nth-of-type(3) {
+background-image: url('img/1316862.png');
+background-size: cover;
+}
+
+section:nth-of-type(4) .status-bar,
+section:nth-of-type(4) .icon-box {
+background-color: #1e90ff; 
+
+}
+section:nth-of-type(4) {
+background-image: url('img/1152262.jpg');
+background-size: cover;
+}
+video {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+p{
+font-weight: bold;
+color: black;
+font-size: 20px;
+
+}
+h3{
+font-weight: bold;  
+color: black;
+font-size: 30px;
+}
+
+.icon-box i {
+font-size: 1.4em;
+}
+.status-bar i {
+font-size: 10em !important;
+}
+form {
+display: flex;
+flex-direction: column;
+align-items: start;
+}
+
+form label {
+margin-bottom: 0.5em;
+color: black;
+font-weight: bold;
+}
+
+form input, form textarea {
+width: 100%;
+padding: 0.5em;
+border: 1px solid #ddd;
+border-radius: 3px;
+margin-bottom: 1em;
+font-size: 1em;
+}
+
+form input[type="submit"] {
+width: auto;
+background-color: #4169E1;
+color: white;
+cursor: pointer;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+
+form input[type="submit"]:hover {
+background-color: #00008B;
+}
+.seta {
+display: none; /* Esconde a seta por padrão */
+text-align: center;
+font-size: 4em; /* Ajuste para o tamanho desejado */
+margin-top: 30%;
+animation: bounce 2s infinite;
+color: white;
+}
+
+@media (max-width: 600px) {
+.content {
+flex-direction: column;
+}
+section {
+width: 100%;
+height: auto;
+margin-bottom: 20px;
+}
+.profile-container {
+position: relative;
+padding-top: 150px; 
+display: flex;
+align-items: center;
+justify-content: flex-end;/* Adiciona mais espaço no topo em dispositivos móveis */
+}
+
+.profile-picture {
+position: absolute;
+top: 0;
+left: 0;
+width: 150px; /* Aumenta o tamanho da foto de perfil para dispositivos móveis */
+height: 150px; /* Aumenta o tamanho da foto de perfil para dispositivos móveis */
+margin-right: 20px;
+}
+
+h1 {
+margin-top: 20px; /* Adiciona uma margem na parte superior em dispositivos móveis */
+}
+}
+@media (min-width: 601px) {
+.seta {
+display: block; /* Mostra a seta em dispositivos que não são celulares */
+}
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+.content {
+flex-direction: column;
+}
+section {
+width: 100%;
+height: auto;
+margin-bottom: 20px;
+}
+}
+@media (min-width: 1025px) {
+.content {
+flex-direction: column;
+}
+section {
+width: 100%;
+height: auto;
+margin-bottom: 20px;
+}
+
+}
+@media (min-width: 1025px) {
+.content {
+flex-direction: row;
+}
+section {
+width: calc(100% / 4); 
+height: 70vh;
+margin-bottom: 20px;
+}
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-30px);
+}
+60% {
+transform: translateY(-15px);
+}
+}
+h1 {
+color: #000; 
+text-shadow: 2px 2px 4px #000000; 
+margin-top: 0;
+}
