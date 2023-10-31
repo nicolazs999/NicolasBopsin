@@ -12,12 +12,12 @@
    
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
         <div class="profile-container">
             <div class="profile-picture"></div>
             <h1 ><strong>Nícolas Bopsin Melos</strong></h1>
         </div>
-        <h4 style="color: black;"><strong>!ATENÇÃO! site em desenvolvimento</strong></h4>
     </header>
     <div class="content">
         <section>
@@ -27,17 +27,6 @@
                 <div class="section-content">
                     <p style="color: white;">Nascido no Rio Grande do Sul, Brasil, sou um jovem desenvolvedor Full-stack apaixonado por tecnologia e inovação. Atualmente, estou cursando a faculdade de Ciência da Computação, onde tenho a oportunidade de aprofundar meu conhecimento e aprimorar minhas habilidades em programação e desenvolvimento de software.</p>
                 </div>
-            </div>
-            <div class="icon-box">
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-home"></i>
-                <i class="fas fa-window-restore"></i>
-            </div>
-            <div class="status-bar">
-                <span class="time"></span>
-                <span class="notifications">🔔</span>
-                <span class="signal">📶</span>
-                <span class="battery">🔋</span>
             </div>
             <div class="lock-screen">
                 <video autoplay muted loop id="myVideo">
@@ -62,17 +51,6 @@
                     <p>Colocar descrição do projeto aqui.</p>
                 </div>
             </div>
-            <div class="icon-box">
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-home"></i>
-                <i class="fas fa-window-restore"></i>
-            </div>
-            <div class="status-bar">
-                <span class="time"></span>
-                <span class="notifications">🔔</span>
-                <span class="signal">📶</span>
-                <span class="battery">🔋</span>
-            </div>
             <div class="lock-screen">
                 <video autoplay muted loop id="myVideo">
                     <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
@@ -88,6 +66,10 @@
                         <h3>Certificado de Harvard</h3>
                         <img src="img/harvard.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
                         <p>Introdução a Ciência da Computação - 70horas.</p>
+
+                        <h3>Certificado de Curso em Video</h3>
+                        <img src="img/NICOLAS-BOPSIN-MELOS-Javascript-40-Horas-Certificado-Curso-em-Video foto.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
+                        <p>Javascript - 40horas.</p>
                         
                         <h3>Certificado Bradesco - Aplicativos</h3>
                         <img src="img/APLICATIVOS.png" class="section-image" style="display: block; margin: auto;" alt="Certificado">
@@ -114,17 +96,6 @@
                         <p>HTML e CSS - 24horas.</p>
                     </div>
                 </div>
-                <div class="icon-box">
-                    <i class="fas fa-arrow-left"></i>
-                    <i class="fas fa-home"></i>
-                    <i class="fas fa-window-restore"></i>
-                </div>
-                <div class="status-bar">
-                    <span class="time"></span>
-                    <span class="notifications">🔔</span>
-                    <span class="signal">📶</span>
-                    <span class="battery">🔋</span>
-                </div>
                 <div class="lock-screen">
                     <video autoplay muted loop id="myVideo">
                         <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
@@ -143,17 +114,6 @@
                     <p><a href="https://wa.me/5551999130630/" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
                 </div>
             </div>
-            <div class="icon-box">
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-home"></i>
-                <i class="fas fa-window-restore"></i>
-            </div>
-            <div class="status-bar">
-                <span class="time"></span>
-                <span class="notifications">🔔</span>
-                <span class="signal">📶</span>
-                <span class="battery">🔋</span>
-            </div>
             <div class="lock-screen">
                 <video autoplay muted loop id="myVideo">
                     <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4" type="video/mp4">
@@ -169,30 +129,16 @@
     <div class="content">
         <section>
             <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
-            <h2>Contato (em teste)</h2>
+            <h2>Estilo do site</h2>
             <div class="mostra">
                 <div class="section-content">
-                    <form action="process_form.php" method="post">
-                        <label for="name">Nome:</label><br>
-                        <input type="text" id="name" name="name"><br>
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email"><br>
-                        <label for="message">Mensagem:</label><br>
-                        <textarea id="message" name="message"></textarea><br>
-                        <input type="submit" value="Enviar">
+                    <h2>Mudar cor do tema</h2>
+                    <button onclick="changeTheme('red')">Vermelho</button>
+                    <button onclick="changeTheme('blue')">Roxo</button>
+                    <button onclick="changeTheme('green')">Verde</button>
+                    <button onclick="resetTheme()">Resetar</button>
                     </form>
                 </div>
-            </div>
-            <div class="icon-box">
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-home"></i>
-                <i class="fas fa-window-restore"></i>
-            </div>
-            <div class="status-bar">
-                <span class="time"></span>
-                <span class="notifications">🔔</span>
-                <span class="signal">📶</span>
-                <span class="battery">🔋</span>
             </div>
             <div class="lock-screen">
                 <video autoplay muted loop id="myVideo">
@@ -201,13 +147,19 @@
             <div class="button expand" onclick="expandContent(this)">+</div> 
     <div class="button collapse" onclick="collapseContent(this)">-</div> 
 </section>
-        <section onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'">
+        <section onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'" >
+            <i style="z-index: 0;" class="fas fa-hand-pointer click-pointer"></i>
             <img src="img/cv.png" class="curriculo-icon"  alt="Ícone de Currículo">
             <video autoplay muted loop id="myVideo" onclick="window.location.href='NICOLAS BOPSIN MELOS CURRICULO.pdf'" style="z-index: 0;">
-                <source src="img/stock-footage-set-of-animated-arrow-cursor-mouse-movement-and-clicks-with-alpha-channel-mouse-cursor-icon (online-video-cutter.com).mp4" type="video/mp4">
+                <source src="img/Particle_Wave_4K_Motion_Background_Loop.mp4">
             </video>
         </section>
+        <div id="alertBox">
+            <p>Atenção! Este site está em desenvolvimento.</p>
+            <span class="closeButton">&times;</span>
+        </div>
     </div>
     
 </body>
 </html>
+    
