@@ -83,21 +83,29 @@ timeElements.forEach(function(element) {
 });
 }
 function changeTheme(color) {
-
     var videoSrc;
-    var backgroundImage;
+    var bodyBackgroundImage;
+    var sectionBackgroundImage;
+    var buttonColor;
+
     switch (color) {
         case 'red':
             videoSrc = 'img/particles-red.mp4';
-            backgroundImage = 'img/tec-red.png';
+            bodyBackgroundImage = 'img/tec-red.png';
+            sectionBackgroundImage = 'img/red-ofc.png'; 
+            buttonColor = '#FF0000'; 
             break;
         case 'blue':
             videoSrc = 'img/particles-purple.mp4';
-            backgroundImage = 'img/tec-purple.png';
+            bodyBackgroundImage = 'img/tec-purple.png';
+            sectionBackgroundImage = 'img/purple-ofc.png'; 
+            buttonColor = '#0000FF'; 
             break;
         case 'green':
             videoSrc = 'img/particles-greennnn.mp4';
-            backgroundImage = 'img/tec-green.png';
+            bodyBackgroundImage = 'img/tec-green.png';
+            sectionBackgroundImage = 'img/green-ofc.png'; 
+            buttonColor = '#008000'; 
             break;
     }
 
@@ -106,8 +114,8 @@ function changeTheme(color) {
         video.src = videoSrc;
     });
 
-    var buttons = document.querySelectorAll('section button');
-    buttons.forEach(function(button) {
+    var buttonsS = document.querySelectorAll('section button');
+    buttonsS.forEach(function(button) {
         button.style.backgroundColor = color;
     });
 
@@ -116,27 +124,52 @@ function changeTheme(color) {
         element.style.color = color;
     });
 
-    
-    document.body.style.backgroundImage = 'url(' + backgroundImage + ')';
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        section.style.backgroundImage = 'url(' + sectionBackgroundImage + ')';
+    });
+
+    var buttons = document.querySelectorAll('.button.expand, .button.collapse');
+    buttons.forEach(function(button) {
+        button.style.backgroundColor = buttonColor;
+    });
+
+    document.body.style.backgroundImage = 'url(' + bodyBackgroundImage + ')';
    
+    
 }
 function resetTheme() {
+    var bodyBackgroundImage = 'img/tec-blu1.jpg'; 
+    var sectionBackgroundImage = 'img/blue-ofc.jpg'; 
+    var buttonColor = '#4169E1'; 
 
     var textElements = document.querySelectorAll('h2');
     textElements.forEach(function(element) {
         element.style.color = '#4169E1'; 
     });
-    document.body.style.backgroundImage = 'img/tec-blu1.jpg'; 
+
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        section.style.backgroundImage = 'url(' + sectionBackgroundImage + ')';
+    });
+
+    var buttonsS = document.querySelectorAll('section button');
+    buttonsS.forEach(function(button) {
+        button.style.backgroundColor = '#4169E1' ;
+    });
+
+    var buttons = document.querySelectorAll('.button.expand, .button.collapse');
+    buttons.forEach(function(button) {
+        button.style.backgroundColor = buttonColor;
+    });
 
     var videos = document.querySelectorAll('video');
     videos.forEach(function(video) {
         video.src = 'img/Particle_Wave_4K_Motion_Background_Loop.mp4';
     });
-    backgroundImage = 'img/tec-blu1.jpg';
-    document.body.style.backgroundImage = 'url(' + backgroundImage + ')';
-    
-    var buttons = document.querySelectorAll('section button');
-    buttons.forEach(function(button) {
-        button.style.backgroundColor = '#4169E1'; 
-    });
+
+    document.body.style.backgroundImage = 'url(' + bodyBackgroundImage + ')';
+ 
 }
+
+

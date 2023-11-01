@@ -150,7 +150,7 @@ margin-left:10px;
 
 }
 #certificado p{
-color: black;
+color: white;
 font-weight:700;
 }
 .status-bar, .icon-box {
@@ -204,7 +204,7 @@ section button:hover {
 position: absolute;
 top: 35px;
 right: 10px;
-background-color: black; 
+background-color: #4169E1; 
 color: white; 
 border: none;
 border-radius: 50%; 
@@ -291,40 +291,25 @@ cursor: pointer;
 transition: opacity 2s ease-in;
 }
 
-section:nth-of-type(1) .status-bar,
-section:nth-of-type(1) .icon-box {
-background-color: #4169E1; 
-}
+
 section:nth-of-type(1) {
-background-image: url('img/1152260.jpg');
+background-image: url('img/blue-ofc.jpg');
 background-size: cover;
 }
 
-section:nth-of-type(2) .status-bar,
-section:nth-of-type(2) .icon-box {
-background-color: #6495ED;
-}
+
 section:nth-of-type(2) {
-background-image: url('img/1152266.jpg');
+background-image: url('img/blue-ofc.jpg');
 background-size: cover;
 }
 
-section:nth-of-type(3) .status-bar,
-section:nth-of-type(3) .icon-box {
-background-color: #00008b; 
-}
 section:nth-of-type(3) {
-background-image: url('img/1316862.png');
+background-image: url('img/blue-ofc.jpg');
 background-size: cover;
 }
 
-section:nth-of-type(4) .status-bar,
-section:nth-of-type(4) .icon-box {
-background-color: #1e90ff; 
-
-}
 section:nth-of-type(4) {
-background-image: url('img/1152262.jpg');
+background-image: url('img/blue-ofc.jpg');
 background-size: cover;
 }
 
@@ -338,13 +323,13 @@ object-fit: cover;
 }
 p{
 font-weight: bold;
-color: black;
+color: white;
 font-size: 20px;
 
 }
 h3{
 font-weight: bold;  
-color: black;
+color: white;
 font-size: 30px;
 }
 
@@ -500,9 +485,6 @@ display: block;
     }
 }
 
-
-
-
 @media (min-width: 601px) and (max-width: 1024px) {
 .content {
 flex-direction: column;
@@ -556,4 +538,23 @@ h1 {
 color: #000; 
 text-shadow: 2px 2px 4px #000000; 
 margin-top: 0;
+}
+
+.red-theme-button:hover {
+    background-color: #FF4500; /* Uma tonalidade mais forte de vermelho */
+}
+
+/* Para o tema azul */
+.blue-theme-button:hover {
+    background-color: #0000CD; /* Uma tonalidade mais forte de azul */
+}
+
+/* Para o tema verde */
+.green-theme-button:hover {
+    background-color: #006400; /* Uma tonalidade mais forte de verde */
+}
+
+/* Para o botão resetar */
+.reset-theme-button:hover {
+    background-color: #4169E1; /* Uma tonalidade mais forte do original */
 }
