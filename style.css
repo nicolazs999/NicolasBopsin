@@ -540,21 +540,3 @@ text-shadow: 2px 2px 4px #000000;
 margin-top: 0;
 }
 
-.red-theme-button:hover {
-    background-color: #FF4500; /* Uma tonalidade mais forte de vermelho */
-}
-
-/* Para o tema azul */
-.blue-theme-button:hover {
-    background-color: #0000CD; /* Uma tonalidade mais forte de azul */
-}
-
-/* Para o tema verde */
-.green-theme-button:hover {
-    background-color: #006400; /* Uma tonalidade mais forte de verde */
-}
-
-/* Para o botão resetar */
-.reset-theme-button:hover {
-    background-color: #4169E1; /* Uma tonalidade mais forte do original */
-}
