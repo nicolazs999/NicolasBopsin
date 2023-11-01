@@ -197,9 +197,7 @@ section button {
     cursor: pointer; 
 }
 
-section button:hover {
-    background-color: #00008B; 
-}
+
 .button {
 position: absolute;
 top: 35px;
