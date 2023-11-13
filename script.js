@@ -65,7 +65,16 @@
         document.querySelector('#alertBox').style.display = 'none';
         document.querySelector('#overlay').style.display = 'none';
     };
+
+    var loadingMessage = document.createElement('div');
+    loadingMessage.textContent = 'SITE CARREGANDO, por favor aguarde...';
+    document.body.appendChild(loadingMessage);
+
     
+    setTimeout(function() {
+        loadingMessage.style.display = 'none';
+        document.querySelector('#alertBox .closeButton').style.display = 'block';
+    }, 3000);
     };
 
 function updateTime() {
@@ -113,30 +122,23 @@ function changeTheme(color) {
     videos.forEach(function(video) {
         video.src = videoSrc;
     });
-
     var buttonsS = document.querySelectorAll('section button');
     buttonsS.forEach(function(button) {
         button.style.backgroundColor = color;
     });
-
     var textElements = document.querySelectorAll('h2');
     textElements.forEach(function(element) {
         element.style.color = color;
     });
-
     var sections = document.querySelectorAll('section');
     sections.forEach(function(section) {
         section.style.backgroundImage = 'url(' + sectionBackgroundImage + ')';
     });
-
     var buttons = document.querySelectorAll('.button.expand, .button.collapse');
     buttons.forEach(function(button) {
         button.style.backgroundColor = buttonColor;
     });
-
     document.body.style.backgroundImage = 'url(' + bodyBackgroundImage + ')';
-   
-    
 }
 function resetTheme() {
     var bodyBackgroundImage = 'img/tec-blu1.jpg'; 
