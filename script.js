@@ -1,5 +1,4 @@
     function expandContent(button) {
-
         var section = button.parentNode;
     section.style.transform = 'scale(1.1)';
 
@@ -16,6 +15,7 @@
     });
     document.querySelector('.seta').style.display = 'none';
     }
+    
 
     function collapseContent(button) {
     var section = button.parentNode;
@@ -30,27 +30,36 @@
     });
     document.querySelector('.seta').style.display = 'block';
     }
+
     window.onload = function() {
- 
+
+        var clickPointers = document.querySelectorAll('.click-pointer');
+    setInterval(function() {
+        clickPointers.forEach(function(clickPointer) {
+            clickPointer.style.display = 'block';
+            setTimeout(function() {
+                clickPointer.style.display = 'none';
+            }, 3000);
+        });
+    }, 6000);
+    
     updateTime();
     setInterval(updateTime, 1000);
     var sections = document.querySelectorAll('section');
-    sections.forEach(function(section) {
-        section.addEventListener('mouseover', function() {
-            var lockScreen = section.querySelector('.lock-screen');
-            lockScreen.style.opacity = '0';
-            lockScreen.style.pointerEvents = 'none';
-            lockScreen.querySelector('video').style.display = 'none';
-        });
-        section.addEventListener('mouseout', function() {
-            var lockScreen = section.querySelector('.lock-screen');
-            lockScreen.style.opacity = '1';
-            lockScreen.style.pointerEvents = 'auto';
-            lockScreen.querySelector('video').style.display = 'block';
-
-        });
+sections.forEach(function(section) {
+    section.addEventListener('mouseover', function() {
+        var lockScreen = section.querySelector('.lock-screen');
+        lockScreen.style.opacity = '0';
+        lockScreen.style.pointerEvents = 'none';
+        lockScreen.querySelector('video').style.display = 'none';
     });
-
+    section.addEventListener('mouseout', function() {
+        var lockScreen = section.querySelector('.lock-screen');
+        lockScreen.style.opacity = '1';
+        lockScreen.style.pointerEvents = 'auto';
+        lockScreen.querySelector('video').style.display = 'block';
+    });
+});
     var buttons = document.querySelectorAll('.button');
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
